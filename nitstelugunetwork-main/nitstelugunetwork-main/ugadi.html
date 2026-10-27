@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Ugadi 2027 — NITS Telugu Network</title>
+  
+  <!-- Font: Modern High-End Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* ==========================================================================
+        CSS VARIABLES & RESET (Clean White & Festive Orange Theme)
+        ========================================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #FF6B00;
+      --primary-light: #FF8C3A;
+      --dark: #0F172A;
+      --text: #334155;
+      --muted: #64748B;
+      --bg: #FFFFFF;
+      --white: #FFFFFF;
+      --radius-lg: 24px;
+      --font-main: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --shadow-premium: 0 12px 34px rgba(15, 23, 42, 0.05), 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12px 0;
+      margin: 0;
+    }
+
+    /* System Micro-Animations */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+
+    /* ==========================================================================
+        HERO & OPEN LAYOUT FRAMEWORK
+        ========================================================================== */
+    .ugadi-hero {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding: 0 16px;
+      animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .ugadi-container {
+      max-width: 480px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Top Badge Header */
+    .ugadi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--white);
+      border: 1px solid #E2E8F0;
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      font-family: var(--font-main);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 6px var(--primary);
+    }
+
+    /* Main Title styled with premium saffron-orange branding */
+    .ugadi-title {
+      font-family: var(--font-main);
+      font-weight: 800;
+      font-size: 2.25rem;
+      color: var(--dark);
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.03em;
+    }
+    .ugadi-title .accent {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ugadi-year {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    /* Card Wrapper Container */
+    .ugadi-card {
+      background: var(--white);
+      border: 1px solid #E2E8F0;
+      border-radius: var(--radius-lg);
+      padding: 32px 24px 28px 24px;
+      box-shadow: var(--shadow-premium);
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Central Icon Wrapper */
+    .status-icon-wrap {
+      width: 56px;
+      height: 56px;
+      background: #FFF7ED;
+      border: 1px solid rgba(255, 107, 0, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem auto;
+      color: var(--primary);
+    }
+
+    /* Status Pill / Indicator */
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FFF7ED;
+      color: #C2410C;
+      border: 1px solid rgba(255, 107, 0, 0.2);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1.1rem;
+    }
+
+    .ugadi-heading-inner {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .ugadi-desc {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Reopening Box style */
+    .ugadi-reopen-box {
+      background: #FAFAFB;
+      border: 1px dashed #CBD5E1;
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 1.4rem;
+      text-align: center;
+    }
+    .ugadi-reopen-box .title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.15rem;
+    }
+    .ugadi-reopen-box .subtitle {
+      font-size: 0.76rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Navigation Trigger Button */
+    .ugadi-back-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      background: var(--dark);
+      color: white;
+      border: none;
+      border-radius: 100px;
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    }
+    .ugadi-back-btn:hover {
+      background: #1E293B;
+      transform: translateY(-1px);
+    }
+
+    @media(max-width: 480px) {
+      body { padding-top: 8px; }
+      .ugadi-hero { padding: 0 12px; }
+      .ugadi-card { padding: 28px 20px 24px 20px; }
+      .ugadi-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="ugadi-hero">
+  <div class="ugadi-container">
+    
+    <!-- Top Header Badge -->
+    <div class="ugadi-badge">
+      <div class="badge-dot"></div>Ugadi 2027
+    </div>
+    
+    <h1 class="ugadi-title">Celebration <span class="accent">Upcoming</span></h1>
+    <div class="ugadi-year">Telugu celebrations · NIT Silchar</div>
+    
+    <div class="ugadi-card">
+      
+      <!-- Festive Symbol Icon -->
+      <div class="status-icon-wrap">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c0 3-2 5-2 8a2 2 0 1 0 4 0c0-3-2-5-2-8z"></path><path d="M4 14h16c0 3.31-2.69 6-6 6h-4c-3.31 0-6-2.69-6-6z"></path><line x1="2" y1="20" x2="22" y2="20"></line></svg>
+      </div>
+
+      <!-- Status Pill -->
+      <div class="status-pill">
+        <span class="badge-dot" style="position:relative;"></span>Coming Soon
+      </div>
+
+      <h2 class="ugadi-heading-inner">Get Ready for the Festivities!</h2>
+      
+      <p class="ugadi-desc">
+        Thank you to everyone who contributed and participated in the previous celebrations at NIT Silchar. We are preparing something special for Ugadi 2027 right here on campus.
+      </p>
+      
+      <!-- Reopening info box -->
+      <div class="ugadi-reopen-box">
+        <div class="title">Ugadi 2027</div>
+        <div class="subtitle">Contributions &amp; Registrations Reopening Soon</div>
+      </div>
+      
+      <a href="index" class="ugadi-back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><polyline points="12 19 5 12 12 5"></polyline></svg>
+        Back to Home
+      </a>
+      
+    </div>
+    
+  </div>
+</section>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"66761a9200ff42729b8c9caefacc4af9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

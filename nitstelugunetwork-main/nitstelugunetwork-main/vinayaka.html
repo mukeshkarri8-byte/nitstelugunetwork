@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Vinayaka Chavithi 2026 — NITS Telugu Network</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet"/>
+  
+  <style>
+    /* ==========================================================================
+        CORE RESET & DESIGN SYSTEM (Fintech Minimalist White Theme)
+        ========================================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --primary: #02BD58;
+      --primary-glow: rgba(2, 189, 88, 0.1);
+      --dark: #0F172A;
+      --text: #334155;
+      --muted: #64748B;
+      --bg: #FAFAFB; /* Clean off-white background */
+      --white: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --accent-red: #EF4444;
+      --accent-green-dark: #049643;
+      
+      /* Smooth Depth Shadows */
+      --shadow-premium: 0 12px 34px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.02);
+      --shadow-btn: 0 4px 14px rgba(2, 189, 88, 0.25);
+      
+      /* Typography Engine */
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --radius-cards: 18px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    /* System Micro-Animations */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
+    @keyframes drawTick { to { stroke-dashoffset: 0; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes modalSlideUp { from { opacity: 0; transform: translateY(24px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    /* ==========================================================================
+        HERO STRUCTURE (Modern Center-Aligned Layout) - COMPACTED
+        ========================================================================== */
+    .page-hero { 
+      padding: 1.5rem 1rem 0.5rem; 
+      text-align: center; 
+      position: relative; 
+      animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; 
+    }
+    .page-hero-badge { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.4rem; 
+      background: var(--white); 
+      border: 1px solid #E2E8F0; 
+      border-radius: 100px; 
+      padding: 0.25rem 0.75rem; 
+      font-family: var(--font-heading); 
+      font-size: 0.7rem; 
+      font-weight: 600; 
+      color: var(--dark); 
+      margin-bottom: 0.5rem; 
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .badge-dot { 
+      width: 6px; 
+      height: 6px; 
+      background: var(--primary); 
+      border-radius: 50%; 
+      animation: pulse 2s infinite; 
+      box-shadow: 0 0 6px var(--primary); 
+    }
+    .page-hero h1 { 
+      font-family: var(--font-heading); 
+      font-weight: 700; 
+      font-size: 1.65rem; 
+      color: #000000; 
+      line-height: 1.2; 
+      margin-bottom: 0.2rem; 
+      letter-spacing: -0.02em; 
+    }
+    .page-hero h1 .accent { 
+      color: var(--primary); 
+    }
+    .tagline { 
+      font-size: 0.8rem; 
+      font-weight: 500; 
+      color: var(--muted); 
+    }
+
+    /* ==========================================================================
+        COMPLETED EVENT BANNER & STATUS STYLING
+        ========================================================================== */
+    .form-container { 
+      width: 100%;
+      max-width: 430px; 
+      margin: 0 auto; 
+      padding: 0 1.25rem 1.5rem; 
+      position: relative; 
+      z-index: 10; 
+      animation: fadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both; 
+    }
+    .form-card { 
+      background: var(--white); 
+      border: 1px solid #E2E8F0; 
+      border-radius: var(--radius-cards); 
+      padding: 24px 20px; 
+      box-shadow: var(--shadow-premium);
+      text-align: center;
+    }
+    .completed-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(2, 189, 88, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      border: 1px solid rgba(2, 189, 88, 0.15);
+      color: var(--primary);
+    }
+    .form-card-title { 
+      font-family: var(--font-heading); 
+      font-weight: 700; 
+      font-size: 1.25rem; 
+      color: var(--dark); 
+      margin-bottom: 0.35rem; 
+      letter-spacing: -0.01em; 
+    }
+    .form-card-sub { 
+      font-size: 0.82rem; 
+      color: var(--muted); 
+      font-weight: 400; 
+      margin-bottom: 1.5rem; 
+      line-height: 1.5;
+    }
+    .completed-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #F1F5F9;
+      color: #475569;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      border: 1px solid #E2E8F0;
+    }
+    .coming-soon-box {
+      background: #F8FAFC;
+      border: 1px dashed #CBD5E1;
+      border-radius: 14px;
+      padding: 1.1rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .coming-soon-title {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 0.2rem;
+    }
+    .coming-soon-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    
+    .success-back-btn { 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem; 
+      background: var(--dark); 
+      color: white; 
+      padding: 0.8rem 1.75rem; 
+      border-radius: 100px; 
+      font-family: var(--font-heading); 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      cursor: pointer; 
+      border: none; 
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1); 
+      text-decoration: none; 
+      width: 100%;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      margin-top: 1.25rem;
+    }
+    .success-back-btn:hover { 
+      background: #1E293B; 
+      transform: translateY(-1px);
+    }
+
+    @media(max-width: 480px) {
+      .form-container { padding: 0 1.25rem 1.5rem; }
+      .form-card { padding: 20px 16px; }
+      .page-hero h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="page-hero">
+  <div class="page-hero-badge"><div class="badge-dot"></div>Vinayaka Chavithi 2026</div>
+  <h1>Celebration <span class="accent">Completed</span></h1>
+  <p class="tagline">Telugu celebrations · NIT Silchar</p>
+</section>
+
+<div class="form-container">
+  <div class="form-card">
+    <div class="completed-icon-wrap">
+      <!-- SVG Diya / Celebration Icon -->
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2c0 3-2 5-2 8a2 2 0 1 0 4 0c0-3-2-5-2-8z"></path>
+        <path d="M4 14h16c0 3.31-2.69 6-6 6h-4c-3.31 0-6-2.69-6-6z"></path>
+        <line x1="2" y1="20" x2="22" y2="20"></line>
+      </svg>
+    </div>
+    
+    <div class="completed-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      2026 Event Successfully Concluded
+    </div>
+
+    <div class="form-card-title">Thank You for Participating!</div>
+    <div class="form-card-sub">
+      Thank you to everyone who contributed and participated in the Vinayaka Chavithi celebrations at NIT Silchar. The 2026 portal has now been successfully closed.
+    </div>
+
+    <div class="coming-soon-box">
+      <div class="coming-soon-title">Vinayaka Chavithi 2027</div>
+      <div class="coming-soon-sub">Contributions &amp; Registrations Reopening Soon</div>
+    </div>
+
+    <a href="index" class="success-back-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"></path><polyline points="12 19 5 12 12 5"></polyline></svg>
+      Back to Home
+    </a>
+  </div>
+</div>
+
+<script>
+  // Event Status Control Variable
+  // Change to "active" when you want to reopen the contribution portal in 2027.
+  const eventStatus = "completed"; 
+  console.log("[Portal Status] Event mode:", eventStatus);
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"66761a9200ff42729b8c9caefacc4af9","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
